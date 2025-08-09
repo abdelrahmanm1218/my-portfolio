@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useDisplay } from 'vuetify';
 
-const {smAndUp} = useDisplay()
+const { smAndUp } = useDisplay()
 
 const links = [
   { text: 'Home', to: '/' },
@@ -14,12 +14,12 @@ const links = [
 
 <template>
   <v-app-bar class="px-4" :elevation="0" rounded>
-  <template v-slot:prepend>
+  <template v-slot:append>
     <v-app-bar-nav-icon v-if="!smAndUp"></v-app-bar-nav-icon>
   </template>
 
   <!-- Logo on the left -->
-  <div class="logo-container d-flex align-center" @click="$router.push('/')">
+  <div class="logo-container d-flex align-center cursor-pointer" @click="$router.push('/')">
           <v-img
         src="/am-logo.png"
         alt="Logo"
@@ -60,24 +60,6 @@ const links = [
 </template>
 
 <style scoped>
-
-/* Logo styling */
-.logo-container {
-
-  cursor: pointer;
-}
-
-.logo-image {
-  border-radius: 50% !important;
-  border: 2px solid var(--color-brand);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.logo-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(18, 53, 36, 0.3);
-}
-
 /* Navbar styling */
 .v-app-bar {
   background-color: var(--color-card) !important;
