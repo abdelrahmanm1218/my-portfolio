@@ -33,6 +33,7 @@ export default defineNuxtConfig({
         { name: 'keywords', content: 'frontend developer, vue.js, nuxt.js, angular, typescript, javascript, python, djanog, api, backend development, web developer, portfolio, abdelrahman mahmoud,' },
         { name: 'author', content: 'Abdelrahman Mahmoud' },
         { name: 'robots', content: 'index, follow' },
+        { name: 'google-site-verification', content: '-lv4_8Y8Rs2jxCu57EeSYVkhdSfTz6BhK42HnyBJGjU' },
 
         //og graph
         { property: 'og:title', content: 'Abdelrahman Mahmoud - Frontend Developer Portfolio' },
