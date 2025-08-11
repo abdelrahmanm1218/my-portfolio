@@ -52,7 +52,16 @@ const links = [
   <v-spacer />
 
   <!-- CTA Button on the right -->
-  <v-btn v-if="smAndUp" color="brand"  rounded="lg" variant="elevated" to="/contact">
+  <v-btn 
+    v-if="smAndUp" 
+    color="brand"  
+    rounded="lg" 
+    variant="elevated" 
+    href="mailto:abdelrahmannali14@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Send email to abdelrahmannali14@gmail.com"
+  >
     Contact
   </v-btn>
   
