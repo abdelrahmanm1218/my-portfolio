@@ -4,43 +4,15 @@
     useHead({
         title: "Abdelrahman Mahmoud | Frontend Developer Portfolio"
     })
-  const experiences = [
-    {
-      date: '03/2025 – Present',
-      role: 'Part-Time Frontend Developer',
-      company: 'Homains',
-      desc: 'Built responsive web app with Vue, Nuxt, and Vuetify from Figma designs.'
-    },
-    {
-      date: '12/2024 – 03/2025',
-      role: 'Frontend Developer Intern',
-      company: 'Homains',
-      desc: 'Led UI development and API integration with Angular & Ant-design.'
-    },
-    {
-      date: '04/2025 – 06/2025',
-      role: 'Frontend Developer',
-      company: 'Start for Business Development',
-      desc: 'Developed responsive e-commerce applications with HTML, SCSS, and Django Views.'
-    }
-  ]
+
+  const experiences = useExperience();
   </script>
 
 <template>
     <Navbar/>
      
       <!-- HERO SECTION -->
-      <section class="hero-section d-flex flex-column align-center justify-center">
-        <v-container class="text-center">
-          <h1 class="text-h2 font-weight-bold mb-4">Abdelrahman Mahmoud</h1>
-          <h2 class="text-h5 mb-6">Frontend Developer</h2>
-          <p class="text-body-1 mb-8">
-            Building clean, modern, and responsive user interfaces with Vue, Nuxt, and Vuetify.
-          </p>
-          <!-- <v-btn color="brand" class="mr-4" large>View Projects</v-btn> -->
-          <v-btn color="accent" large>Contact Me</v-btn>
-        </v-container>
-      </section>
+      <Hero/>
   
       <!-- ABOUT ME -->
       <section class="py-16">
@@ -130,8 +102,8 @@
             </v-timeline-item>
           </v-timeline>
         </v-container>
-      </section> -->
-  
+      </section> 
+   -->
       <!-- CONTACT -->
       <section class="py-16">
         <v-container>
@@ -156,11 +128,7 @@
   
   
   <style scoped>
-  .hero-section {
-    background-color: var(--color-background);
-    color: var(--color-text);
-    min-height: 100vh; /* full height */
-  }
+  
   
   .bg-light {
     background-color: var(--color-background);

@@ -469,3 +469,6 @@ npm run type-check
 - [Nuxt.js Best Practices](https://nuxt.com/docs/guide/concepts/best-practices)
 - [Web Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 
+
+
+

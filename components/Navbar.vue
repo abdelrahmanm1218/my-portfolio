@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { useDisplay } from 'vuetify';
 import { ref } from 'vue';
+import { useSocials } from '#imports';
 
 const { smAndUp } = useDisplay()
+let socials = ref()
 
 const links = [
   { text: 'Home', to: '/' },
@@ -13,6 +15,10 @@ const links = [
 ]
 
 const drawer = ref(false)
+
+onMounted(()=> {
+  socials.value = useSocials()
+})
 </script>
 
 <template>
@@ -96,6 +102,14 @@ const drawer = ref(false)
       >
         Contact
       </v-btn>
+
+      <div class="icons-wrapper mt-6 d-flex align-center justify-center">
+
+        <v-btn v-for="social in socials" icon variant="text" target="_blank" :href="social.link" class="mr-6" color="brand" size="medium">
+            <v-icon>{{ social.logo }}</v-icon>
+        </v-btn>
+
+      </div>
   </v-navigation-drawer>
 </template>
 
