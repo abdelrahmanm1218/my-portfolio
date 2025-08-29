@@ -28,7 +28,7 @@ onMounted(()=>{
                 <v-col cols="12" md="7" order="2" order-md="2" class="fade-slide text-center" style="animation-delay: 0.2s;" >
                     <h1 class="text-h5 text-md-h3 text-lg-h2 font-weight-bold mb-2" style="color: var(--color-brand);">Abdelrahman Mahmoud</h1>
                     
-                    <h2 class="text-h6 text-md-h5 text-lg-h4 te mb-4">Frontend Developer</h2>
+                    <h2 class="text-h6 text-md-h5 text-lg-h4 te mb-4">Full Stack Developer</h2>
 
                     <p class="text-body-1 text-md-body-3 text-lg-body-3 mb-2 mb-md-6 mb-lg-6 px-6">
                         Building clean, modern, and responsive user interfaces with Vue, Nuxt, and Vuetify.

@@ -1,8 +1,11 @@
 <script setup>
     import { useHead } from '#app';
     import Navbar from '~/components/Navbar.vue';
+    import { useDisplay } from 'vuetify';
+    
+    const {smAndUp} = useDisplay()
     useHead({
-        title: "Abdelrahman Mahmoud | Frontend Developer Portfolio"
+        title: "Abdelrahman Mahmoud | Full Stack Developer Portfolio"
     })
 
   const experiences = useExperience();
@@ -82,7 +85,7 @@
       </section>
   
       <!-- EXPERIENCE TIMELINE -->
-      <!-- <section class="bg-light py-16">
+      <section v-if="smAndUp" class="bg-light py-16">
         <v-container>
           <h2 class="section-title mb-8">Experience</h2>
           <v-timeline align="start">
@@ -103,7 +106,7 @@
           </v-timeline>
         </v-container>
       </section> 
-   -->
+  
       <!-- CONTACT -->
       <section class="py-16">
         <v-container>
