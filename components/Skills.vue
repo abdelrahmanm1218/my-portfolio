@@ -24,11 +24,10 @@
                         <v-card-text>
                             <ul style="list-style: none; padding: 0;display: flex;flex-wrap: wrap;gap: 10px;">
                                 <li v-for="skill in frontend" :key="skill.name">
-                                    <v-tooltip :key="`fe-${skill.name}`" :text="skill.name" location="top" content-class="skill-tooltip">
-                                        <template #activator="{ props }">
-                                            <v-img v-bind="props" width="40" height="40" :src="skill.icon" :alt="skill.name"></v-img>
-                                        </template>
-                                    </v-tooltip>
+                                    <div class="skill-icon">
+                                        <v-img width="40" height="40" :src="skill.icon" :alt="skill.name"></v-img>
+                                        <span class="img-tooltip">{{ skill.name }}</span>
+                                    </div>
                                 </li>
                             </ul>
                         </v-card-text>
@@ -41,11 +40,10 @@
                         <v-card-text>
                             <ul style="list-style: none; padding: 0;display: flex;flex-wrap: wrap;gap: 10px;">
                                 <li v-for="skill in backend" :key="skill.name">
-                                    <v-tooltip :key="`be-${skill.name}`" :text="skill.name" location="top" content-class="skill-tooltip">
-                                        <template #activator="{ props }">
-                                            <v-img v-bind="props" width="40" height="40" :src="skill.icon" :alt="skill.name"></v-img>
-                                        </template>
-                                    </v-tooltip>
+                                    <div class="skill-icon">
+                                        <v-img width="40" height="40" :src="skill.icon" :alt="skill.name"></v-img>
+                                        <span class="img-tooltip">{{ skill.name }}</span>
+                                    </div>
                                 </li>
                             </ul>
                         </v-card-text>
@@ -58,11 +56,10 @@
                         <v-card-text>
                             <ul style="list-style: none; padding: 0;display: flex;flex-wrap: wrap;gap: 10px;">
                                 <li v-for="skill in general" :key="skill.name">
-                                    <v-tooltip :key="`gen-${skill.name}`" :text="skill.name" location="top" content-class="skill-tooltip">
-                                        <template #activator="{ props }">
-                                            <v-img v-bind="props" width="40" height="40" :src="skill.icon" :alt="skill.name"></v-img>
-                                        </template>
-                                    </v-tooltip>
+                                    <div class="skill-icon">
+                                        <v-img width="40" height="40" :src="skill.icon" :alt="skill.name"></v-img>
+                                        <span class="img-tooltip">{{ skill.name }}</span>
+                                    </div>
                                 </li>
                             </ul>
                         </v-card-text>
@@ -76,13 +73,31 @@
 </template>
 
 <style scoped>
-:deep(.skill-tooltip) {
-    /* background-color: rgba(0, 0, 0, 0.7); */
-    background-color: var(--color-brand);
-    color: #ffffff;
+
+.skill-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.img-tooltip {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 6px);
+    transform: translateX(-50%);
+    white-space: nowrap;
     padding: 6px 10px;
     border-radius: 6px;
-    font-size: 0.875rem;
+    background-color: var(--color-brand);
+    color: #ffffff;
+    font-size: 0.75rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.skill-icon:hover .img-tooltip {
+    opacity: 1;
+    transform: translate(-50%, -2px);
 }
 
 .skill-card {
