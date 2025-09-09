@@ -24,7 +24,7 @@
                         <v-card-text>
                             <ul style="list-style: none; padding: 0;display: flex;flex-wrap: wrap;gap: 10px;">
                                 <li v-for="skill in frontend" :key="skill.name">
-                                    <v-tooltip :text="skill.name" location="top" content-class="skill-tooltip">
+                                    <v-tooltip :key="`fe-${skill.name}`" :text="skill.name" location="top" content-class="skill-tooltip">
                                         <template #activator="{ props }">
                                             <v-img v-bind="props" width="40" height="40" :src="skill.icon" :alt="skill.name"></v-img>
                                         </template>
@@ -41,7 +41,7 @@
                         <v-card-text>
                             <ul style="list-style: none; padding: 0;display: flex;flex-wrap: wrap;gap: 10px;">
                                 <li v-for="skill in backend" :key="skill.name">
-                                    <v-tooltip :text="skill.name" location="top" content-class="skill-tooltip">
+                                    <v-tooltip :key="`be-${skill.name}`" :text="skill.name" location="top" content-class="skill-tooltip">
                                         <template #activator="{ props }">
                                             <v-img v-bind="props" width="40" height="40" :src="skill.icon" :alt="skill.name"></v-img>
                                         </template>
@@ -58,7 +58,7 @@
                         <v-card-text>
                             <ul style="list-style: none; padding: 0;display: flex;flex-wrap: wrap;gap: 10px;">
                                 <li v-for="skill in general" :key="skill.name">
-                                    <v-tooltip :text="skill.name" location="top" content-class="skill-tooltip">
+                                    <v-tooltip :key="`gen-${skill.name}`" :text="skill.name" location="top" content-class="skill-tooltip">
                                         <template #activator="{ props }">
                                             <v-img v-bind="props" width="40" height="40" :src="skill.icon" :alt="skill.name"></v-img>
                                         </template>
