@@ -1,7 +1,7 @@
 export function useExperience(){
     const experiences = [
       {
-        date: '03/2025 – Present',
+        date: '08/2025 – Present',
           role: 'Full Stack Developer - Full-Time ',
           company: 'Homains',
           desc: ''
