@@ -18,7 +18,6 @@ export default function useSkills(){
         {name: 'Frappe', icon: '/icons/frappe.png'},
         {name: 'Postman', icon: '/icons/postman-api.svg'},
         {name: 'Swagger', icon: '/icons/swagger.svg'},
-        {name: 'SQL', icon: '/icons/'},
     ]
     const general = [
         {name: 'Git', icon: '/icons/git.svg'},
@@ -26,7 +25,6 @@ export default function useSkills(){
         {name: 'GitLab', icon: '/icons/gitlab.svg'},
         {name: 'Cursor AI', icon: '/icons/cursor-ai.svg'},
         {name: 'Figma', icon: '/icons/figma.svg'},
-        {name: 'Agile/Scrum', icon: '/icons/'},
     ]
 
 
