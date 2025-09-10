@@ -13,7 +13,7 @@
 
 
 <template>
-    <section id="skills" class="bg-light pt-0 pb-16">
+    <section id="skills" class="bg-light py-8">
         <v-container>
             <h2 class="section-title mb-4">Skills & Tools</h2>
             

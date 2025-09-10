@@ -67,25 +67,7 @@
       </section> -->
   
       <!-- PROJECTS -->
-      <section id="#projects" class="py-16">
-        <v-container>
-          <h2 class="section-title mb-8">Projects</h2>
-          <v-row>
-            <v-col cols="12" md="4" v-for="n in 3" :key="n">
-              <v-card>
-                <v-img src="https://via.placeholder.com/400x250" height="200px"></v-img>
-                <v-card-title>Project {{ n }}</v-card-title>
-                <v-card-text>
-                  Short description of project {{ n }} and the technologies used.
-                </v-card-text>
-                <v-card-actions>
-                  <v-btn color="brand" text>View Project</v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
-      </section>
+     <Projects/>
   
       <!-- EXPERIENCE TIMELINE -->
       <section v-if="smAndUp" class="bg-light py-16">

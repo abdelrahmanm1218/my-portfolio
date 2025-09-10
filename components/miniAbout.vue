@@ -4,7 +4,7 @@
 
 
 <template>
-    <section class="py-16">
+    <section class="py-8">
             <v-container>
             <h2 class="section-title mb-6">About</h2>
             <p class="mb-6">
@@ -14,29 +14,30 @@
 
                 Full Stack Engineer passionate about crafting clean interfaces and scalable systems. I thrive in Agile teams and love delivering solutions that make an impact.
             </p>
-            <v-chip-group column>
+            <div class="d-flex flex-wrap">
                 <!-- FRONTEND -->
-                <v-chip color="brand">JavaScript</v-chip>
-                <v-chip color="brand" text-color="white">TypeScript</v-chip>
-                <v-chip color="brand" text-color="white">Vue.js</v-chip>
-                <v-chip color="brand" text-color="white">Nuxt</v-chip>
-                <v-chip color="brand" text-color="white">Angular</v-chip>
-                <v-chip color="brand" text-color="white">Vuetify</v-chip>
-                <v-chip color="brand" text-color="white">Ant-Design</v-chip>
-                <v-chip color="brand" text-color="white">Bootstrap</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>JavaScript</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>TypeScript</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Vue.js</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Nuxt</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Angular</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Vuetify</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Ant-Design</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Bootstrap</v-chip>
 
 
                 <!-- BACKEND -->
-                <v-chip color="brand" text-color="white">Python</v-chip>
-                <v-chip color="brand" text-color="white">Django</v-chip>
-                <v-chip color="brand" text-color="white">Frappe</v-chip>
-                <v-chip color="brand" text-color="white">REST API</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Python</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Django</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Frappe</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>REST API</v-chip>
 
                 <!-- GENERAL -->
-                <v-chip color="brand" text-color="white">Git</v-chip>
-                <v-chip color="brand" text-color="white">Git Workflows</v-chip>
-                <v-chip color="brand" text-color="white">Agile</v-chip>
-            </v-chip-group>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Git</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Git Workflows</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Agile</v-chip>
+                <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>SEO</v-chip>
+            </div>
             </v-container>
         </section>
 </template>
