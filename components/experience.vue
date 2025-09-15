@@ -15,6 +15,7 @@
       <h2 class="section-title mb-8">Experience</h2>
       <v-timeline align="start">
         <v-timeline-item
+        style="background-color: red;"
           v-for="(exp, i) in experiences"
           :key="i"
           :dot-color="'brand'"
@@ -47,13 +48,12 @@
 
 <style scoped>
 .exp-card {
+    width: 100%;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    will-change: transform, box-shadow;
+    transition: box-shadow 0.2s ease;
 }
 
 .exp-card:hover {
-    transform: translateY(-2px) scale(1.01);
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
 }
 

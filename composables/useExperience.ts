@@ -2,14 +2,14 @@ export function useExperience(){
     const experiences = [
       {
         date: '08/2025 – Present',
-          role: 'Full-Time Full Stack Engineer',
+          role: 'Full Stack Engineer',
           company: 'Homains',
           desc: [],
           logo: "/homains-logo.png"
       },  
       {
           date: '03/2025 – 08/2025',
-          role: 'Part-Time Frontend Developer',
+          role: 'Frontend Developer',
           company: 'Homains',
           desc: ["Delivered responsive web application using Vue, Nuxt, TypeScript, and Vuetify based on Figma designs.", "Took ownership of reviewing and refactoring legacy code to better match design specifications and user flows, resulting in a smoother and more maintainable UI.","Collaborated with backend developers to debug integration issues, adjust APIs, and ensure full end-to-end functionality."],
           logo: "/homains-logo.png"
@@ -17,7 +17,7 @@ export function useExperience(){
         
         {
           date: '04/2025 – 06/2025',
-          role: 'Project-based Frontend Developer',
+          role: 'Frontend Developer',
           company: 'Start for Business Development',
           desc: ["Developed responsive e-commerce interfaces from Figma designs using HTML, SCSS, Bootstrap and integrated them within Django Views.","Leveraged AI tools like Cursor to boost development productivity and learned to craft effective prompts to generate high-quality, production-ready code."],
           logo: "/start-for-business-dev.jpeg"
@@ -31,7 +31,7 @@ export function useExperience(){
         },
         {
           date: '10/2023 – 01/2024',
-          role: 'Project-based Frontend Developer',
+          role: 'Frontend Developer',
           company: 'EPIK for Software Solutions',
           desc: ['Transformed Figma Designs to pixel-perfect interfaces.'],
           logo: "/epik.jpeg"

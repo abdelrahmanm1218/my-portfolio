@@ -1,271 +1,156 @@
 # Color System Documentation
 
-This document provides comprehensive information about the color system used in Abdelrahman Mahmoud's portfolio website.
-
-## Overview
-
-The portfolio uses a carefully designed color system that ensures consistency, accessibility, and professional appearance across all components. The system is implemented using CSS custom properties (CSS variables) and is accessible through both CSS and JavaScript.
+This document explains how to use the centralized color system in your Nuxt portfolio project.
 
 ## Color Palette
 
 ### Brand Colors
+- **Primary Brand**: `#123524` (Dark green)
 
-#### Primary Brand Color
-- **Hex**: `#123524`
-- **RGB**: `18, 53, 36`
-- **Usage**: Primary buttons, links, headings, and brand elements
-- **CSS Variable**: `--color-brand`
+### Neutral Colors (Light Theme)
+- **Background**: `#f8f9fa` (Very light gray)
+- **Card/Surface**: `#ffffff` (White)
+- **Text**: `#1a1a1a` (Almost black/dark gray)
+- **Border/Divider**: `#e0e0e0` (Light gray)
 
-#### Secondary Brand Color
-- **Hex**: `#123452`
-- **RGB**: `18, 52, 82`
-- **Usage**: Secondary elements, accents, and complementary features
-- **CSS Variable**: `--color-brand-secondary`
+## Usage Methods
 
-### Neutral Colors
-
-#### Background Colors
-- **Main Background**: `#f8f9fa` (`--color-background`)
-- **Card Background**: `#ffffff` (`--color-card`)
-- **Surface Background**: `#ffffff` (`--color-surface`)
-- **Surface Variant**: `#f1f3f4` (`--color-surface-variant`)
-
-#### Text Colors
-- **Primary Text**: `#1a1a1a` (`--color-text`)
-- **Muted Text**: `#6c757d` (`--color-text-muted`)
-- **Light Text**: `#adb5bd` (`--color-text-light`)
-
-#### Border & Divider Colors
-- **Border**: `#e0e0e0` (`--color-border`)
-- **Divider**: `#e0e0e0` (`--color-divider`)
-
-### Interactive States
-
-#### Hover States
-- **Primary Hover**: `#0d291b` (`--color-brand-hover`)
-- **Secondary Hover**: `#0f2a42` (`--color-brand-secondary-hover`)
-
-#### Light Variations
-- **Primary Light**: `rgba(18, 53, 36, 0.1)` (`--color-brand-light`)
-- **Primary Lighter**: `rgba(18, 53, 36, 0.05)` (`--color-brand-lighter`)
-- **Secondary Light**: `rgba(18, 52, 82, 0.1)` (`--color-brand-secondary-light`)
-- **Secondary Lighter**: `rgba(18, 52, 82, 0.05)` (`--color-brand-secondary-lighter`)
-
-### Shadow Colors
-- **Light Shadow**: `rgba(0, 0, 0, 0.1)` (`--color-shadow-light`)
-- **Medium Shadow**: `rgba(0, 0, 0, 0.15)` (`--color-shadow-medium`)
-- **Dark Shadow**: `rgba(0, 0, 0, 0.25)` (`--color-shadow-dark`)
-
-## Implementation
-
-### CSS Variables
-
-All colors are defined as CSS custom properties in `assets/css/colors.css`:
+### 1. CSS Custom Properties (Recommended for custom styling)
 
 ```css
-:root {
-  /* Brand Colors */
-  --color-brand: #123524;
-  --color-brand-secondary: #123452;
-  
-  /* Neutral Colors */
-  --color-background: #f8f9fa;
-  --color-card: #ffffff;
-  --color-text: #1a1a1a;
-  --color-border: #e0e0e0;
-  
-  /* Interactive States */
-  --color-brand-hover: #0d291b;
-  --color-brand-light: rgba(18, 53, 36, 0.1);
-  
-  /* Shadow Colors */
-  --color-shadow-light: rgba(0, 0, 0, 0.1);
-  --color-shadow-medium: rgba(0, 0, 0, 0.15);
-  --color-shadow-dark: rgba(0, 0, 0, 0.25);
+.my-component {
+  background-color: var(--color-brand);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
 }
 ```
 
-### Vuetify Theme Integration
+Available CSS variables:
+- `--color-brand`
+- `--color-background`
+- `--color-card`
+- `--color-text`
+- `--color-border`
+- `--color-divider`
+- `--color-brand-hover`
+- `--color-brand-light`
+- `--color-brand-lighter`
 
-The color system is integrated with Vuetify's theming system in `plugins/vuetify.ts`:
+### 2. Vuetify Theme Colors (Recommended for Vuetify components)
 
-```typescript
-theme: {
-  defaultTheme: 'light',
-  themes: {
-    light: {
-      colors: {
-        primary: '#123524',
-        brand: '#123524',
-        background: '#f8f9fa',
-        surface: '#ffffff',
-        'on-background': '#1a1a1a',
-        'on-surface': '#1a1a1a',
-        'on-primary': '#ffffff',
-        'on-brand': '#ffffff',
-      }
-    }
-  }
-}
+```vue
+<template>
+  <v-btn color="brand">Brand Button</v-btn>
+  <v-btn color="primary">Primary Button</v-btn>
+  <v-card color="surface">Card</v-card>
+</template>
 ```
 
-### JavaScript Access
+Available Vuetify colors:
+- `primary` / `brand` (both map to #123524)
+- `background`
+- `surface`
+- `surface-variant`
 
-Colors can be accessed programmatically using the `useColors` composable:
+### 3. Composable (For dynamic color usage in JavaScript)
 
-```typescript
-const { brand, neutral, getBrandColor, getNeutralColor } = useColors()
+```vue
+<script setup>
+import { useColors } from '~/composables/useColors'
 
-// Access specific colors
+const { brand, neutral, getBrandColor, hexToRgba } = useColors()
+
+// Direct access
 const primaryColor = brand.primary
 const backgroundColor = neutral.background
 
-// Get colors with utility functions
-const brandColor = getBrandColor('primary')
-const textColor = getNeutralColor('text')
+// With opacity
+const brandWithOpacity = hexToRgba(brand.primary, 0.5)
+</script>
 ```
 
-## Usage Guidelines
+### 4. Utility Classes
 
-### When to Use Each Color
-
-#### Primary Brand Color (`#123524`)
-- Main call-to-action buttons
-- Primary navigation elements
-- Important headings
-- Brand logos and icons
-- Active states
-
-#### Secondary Brand Color (`#123452`)
-- Secondary buttons
-- Accent elements
-- Complementary features
-- Alternative actions
-
-#### Background Colors
-- **Main Background**: Page backgrounds, large content areas
-- **Card Background**: Card components, modals, dropdowns
-- **Surface Background**: Form inputs, interactive elements
-- **Surface Variant**: Subtle backgrounds, disabled states
-
-#### Text Colors
-- **Primary Text**: Main content, headings, important information
-- **Muted Text**: Secondary information, captions, metadata
-- **Light Text**: Disabled text, placeholders
-
-### Accessibility Considerations
-
-#### Contrast Ratios
-All color combinations meet WCAG 2.1 AA standards:
-- **Primary text on background**: 15.6:1 (exceeds AAA)
-- **Primary text on card**: 15.6:1 (exceeds AAA)
-- **Brand color on white**: 4.5:1 (meets AA)
-
-#### Color Independence
-The design doesn't rely solely on color to convey information:
-- Interactive elements have hover states
-- Form validation uses both color and icons
-- Links are underlined in addition to color
-
-### Responsive Considerations
-
-The color system works consistently across all device sizes:
-- Colors remain the same on mobile, tablet, and desktop
-- Contrast ratios are maintained across all viewports
-- Interactive states work on both touch and mouse devices
-
-## Utility Classes
-
-The color system includes utility classes for common styling needs:
-
-### Background Utilities
-```css
-.bg-brand { background-color: var(--color-brand) !important; }
-.bg-background { background-color: var(--color-background) !important; }
-.bg-card { background-color: var(--color-card) !important; }
-.bg-surface { background-color: var(--color-surface) !important; }
-.bg-surface-variant { background-color: var(--color-surface-variant) !important; }
+```vue
+<template>
+  <div class="bg-brand text-white">Brand background</div>
+  <div class="bg-background text-primary">Default background</div>
+  <div class="text-brand">Brand colored text</div>
+</template>
 ```
 
-### Text Color Utilities
-```css
-.text-brand { color: var(--color-brand) !important; }
-.text-primary { color: var(--color-text) !important; }
-.text-muted { color: var(--color-text-muted) !important; }
-.text-light { color: var(--color-text-light) !important; }
-```
-
-### Border Utilities
-```css
-.border-brand { border-color: var(--color-brand) !important; }
-.border-default { border-color: var(--color-border) !important; }
-.border-divider { border-color: var(--color-divider) !important; }
-```
+Available utility classes:
+- Background: `.bg-brand`, `.bg-background`, `.bg-card`, `.bg-surface`
+- Text: `.text-brand`, `.text-primary`, `.text-muted`
+- Border: `.border-brand`, `.border-default`
 
 ## Examples
 
-### Button Styling
+### Custom Card Component
 ```vue
 <template>
-  <!-- Primary button -->
-  <v-btn color="brand" class="text-white">
-    Primary Action
-  </v-btn>
-  
-  <!-- Secondary button -->
-  <v-btn variant="outlined" color="brand">
-    Secondary Action
-  </v-btn>
-</template>
-```
-
-### Card Styling
-```vue
-<template>
-  <v-card class="bg-card border-default">
-    <v-card-title class="text-primary">Card Title</v-card-title>
-    <v-card-text class="text-muted">Card content</v-card-text>
-  </v-card>
-</template>
-```
-
-### Custom Component Styling
-```vue
-<template>
-  <div class="custom-component">
-    <h2 class="text-brand">Custom Heading</h2>
-    <p class="text-primary">Custom content</p>
+  <div class="custom-card">
+    <h3 class="card-title">Title</h3>
+    <p class="card-content">Content</p>
   </div>
 </template>
 
 <style scoped>
-.custom-component {
-  background-color: var(--color-surface);
+.custom-card {
+  background-color: var(--color-card);
   border: 1px solid var(--color-border);
-  padding: 1rem;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px var(--color-shadow-light);
+}
+
+.card-title {
+  color: var(--color-brand);
+  margin-bottom: 8px;
+}
+
+.card-content {
+  color: var(--color-text);
 }
 </style>
 ```
 
-## Maintenance
+### Dynamic Color Usage
+```vue
+<script setup>
+import { useColors } from '~/composables/useColors'
 
-### Adding New Colors
+const { getBrandColor, hexToRgba } = useColors()
 
-1. **Define the color** in `assets/css/colors.css`
-2. **Add to Vuetify theme** in `plugins/vuetify.ts` if needed
-3. **Update the composable** in `composables/useColors.ts`
-4. **Document the usage** in this file
+const buttonStyle = computed(() => ({
+  backgroundColor: getBrandColor(),
+  boxShadow: `0 4px 12px ${hexToRgba(getBrandColor(), 0.3)}`
+}))
+</script>
 
-### Color Updates
+<template>
+  <button :style="buttonStyle">Dynamic Button</button>
+</template>
+```
 
-When updating colors:
-1. Ensure contrast ratios meet accessibility standards
-2. Test across all components and pages
-3. Update documentation
-4. Consider the impact on existing designs
+## Best Practices
 
-## Resources
+1. **Use CSS custom properties** for custom components and styling
+2. **Use Vuetify theme colors** for Vuetify components (v-btn, v-card, etc.)
+3. **Use the composable** when you need dynamic color manipulation
+4. **Use utility classes** for quick styling and prototyping
+5. **Avoid hardcoded hex values** in your components - always use the color system
 
-- [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
-- [Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
-- [Material Design Color System](https://material.io/design/color/the-color-system.html)
+## Extending the Color System
+
+To add new colors, update these files:
+1. `assets/css/colors.css` - Add CSS custom properties
+2. `plugins/vuetify.ts` - Add to Vuetify theme
+3. `composables/useColors.ts` - Add to composable
+
+## File Locations
+
+- **CSS Variables**: `assets/css/colors.css`
+- **Vuetify Theme**: `plugins/vuetify.ts`
+- **Composable**: `composables/useColors.ts`
+- **Global Import**: `nuxt.config.ts`
