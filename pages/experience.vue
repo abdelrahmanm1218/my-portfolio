@@ -1,10 +1,10 @@
 <script setup>
 import Navbar from '../components/Navbar.vue'
-import { useHead } from '#app'
 import UnderDevelopmentCard from '../components/UnderDevelopmentCard.vue'
+import { useHead } from '#app'
 
 useHead({
-    title: "About Abdelrahman"
+    title: "Abdelrahman's Experience"
 })
 
 </script>

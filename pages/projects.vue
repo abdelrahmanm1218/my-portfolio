@@ -4,7 +4,7 @@ import { useHead } from '#app'
 import UnderDevelopmentCard from '../components/UnderDevelopmentCard.vue'
 
 useHead({
-    title: "About Abdelrahman"
+    title: "Abdelrahman's Projects"
 })
 
 </script>
