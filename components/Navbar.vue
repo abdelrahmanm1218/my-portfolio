@@ -27,7 +27,7 @@ onMounted(()=> {
     
     <template v-slot:append>
       <v-app-bar-nav-icon  v-if="!smAndUp" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-    </template>
+    </template> 
 
   <!-- Logo on the left -->
     <div class="logo-container d-flex align-center cursor-pointer ml-4" @click="$router.push('/')">
