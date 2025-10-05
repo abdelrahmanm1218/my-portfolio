@@ -4,9 +4,9 @@
 
 
 <template>
-    <section class="py-8">
+    <section class="pt-8 pb-4">
             <v-container>
-            <h2 class="section-title mb-6">About</h2>
+            <h2 class="section-title mb-4">About</h2>
             <p class="mb-6">
                 <!-- I'm a Computer Engineering graduate with almost 2 years of hands-on experience in building
                 reusable UI components and delivering user-friendly interfaces. I enjoy working in Agile

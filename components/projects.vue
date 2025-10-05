@@ -8,9 +8,9 @@
 
 
 <template>
-<section id="#projects" class="py-8">
+<section id="#projects" class="pt-8 pb-4">
         <v-container>
-          <h2 class="section-title mb-8">Projects</h2>
+          <h2 class="section-title mb-4">Projects</h2>
           <template v-if="smAndUp">
             <v-row align="stretch">
             
@@ -58,7 +58,7 @@
             <v-carousel
           show-arrows="hover"
           hide-delimiters
-          height="420"
+          height="450"
         >
           <v-carousel-item
             v-for="proj in projects"

@@ -10,9 +10,9 @@
 </script>
 
 <template>
-    <section class="bg-light py-16">
+    <section class="bg-light pt-8 pb-4">
     <v-container>
-      <h2 class="section-title mb-8">Experience</h2>
+      <h2 class="section-title mb-4">Experience</h2>
       <v-timeline align="start">
         <v-timeline-item
         style="background-color: red;"
