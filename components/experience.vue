@@ -15,7 +15,7 @@
       <h2 class="section-title mb-4">Experience</h2>
       <v-timeline align="start">
         <v-timeline-item
-        style="background-color: red;"
+        
           v-for="(exp, i) in experiences"
           :key="i"
           :dot-color="'brand'"
