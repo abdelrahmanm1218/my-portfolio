@@ -21,7 +21,7 @@ const sections = [
                 </v-col>
 
                 <v-col cols="12" md="6" class="text-center">
-                    <v-btn color="accent" variant="text" v-for="section in sections" :key="section.title" :to="section.to" text class="mx-2">
+                    <v-btn color="accent" variant="text" density="comfortable" v-for="section in sections" :key="section.title" :to="section.to" text class="mx-2">
                         {{ section.title }}
                     </v-btn>
                 </v-col>
