@@ -56,10 +56,28 @@
 
           <template v-else>
             <v-carousel
-          show-arrows="hover"
+          
           hide-delimiters
           height="450"
         >
+        <template #prev="{ props }">
+      <v-btn
+        v-bind="props"
+        icon="mdi-chevron-left"
+        color="accent"
+        
+      />
+    </template>
+
+    <template #next="{ props }">
+      <v-btn
+        v-bind="props"
+        icon="mdi-chevron-right"
+        color="accent"
+        
+      />
+    </template>
+
           <v-carousel-item
             v-for="proj in projects"
             :key="proj.id"
