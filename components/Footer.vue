@@ -28,7 +28,7 @@ const sections = [
 
                 <v-col cols="12" md="3" class="text-center text-md-right">
                 
-                    <v-btn color="accent" v-for="social in socials" :key="social.title" :href="social.link" target="_blank" icon class="mx-1">
+                    <v-btn color="accent" size="x-small" v-for="social in socials" :key="social.title" :href="social.link" target="_blank" icon class="mx-2">
                         <v-icon>{{ social.logo }}</v-icon>
                     </v-btn>
                 </v-col>
