@@ -1,5 +1,16 @@
 export function useProjects(){
     const projects = [
+        /*{
+            id: "PR-04",
+            project_name: "Hanbee3",
+            thumbnail: "",
+            short_description: "digital call center telesales solutions for buisnesses and remote telesales",
+            start_date: "10/2025",
+            end_date:"Present",
+            technologies: ["Frappe", "Angular"],
+            link: "https://hanbee3.com/home",
+            classified: false
+        },*/
         {
             id: "PR-02",
             project_name: "Bus14",
@@ -7,7 +18,7 @@ export function useProjects(){
             short_description: "Smart Transportation System",
             // description: "Personal portfolio to have a professional digital presence",
             start_date: "08/2025",
-            end_date: "Present",
+            end_date: "10/2025",
             technologies: ["Frappe",  "Angular"],
             link: "https://portal.bus14.co/",   
             classified: false,
