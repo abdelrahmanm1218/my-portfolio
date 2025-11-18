@@ -5,8 +5,60 @@
     const projects = useProjects()
     const {smAndUp} = useDisplay()
 
+    type SortField = 'start_date' | 'end_date'
+    type SortDirection = 'asc' | 'desc'
+    type SortOption = { label: string, field: SortField, direction: SortDirection }
+
     const showWorkingOnly = ref(false)
-    const displayedProjects = computed(() => showWorkingOnly.value ? projects.filter((proj) => proj.currently_working) : projects)
+    const sortField = ref<SortField | null>(null)
+    const sortDirection = ref<SortDirection>('desc')
+    const sortMenu = ref(false)
+
+    const sortMenuOptions: SortOption[] = [
+        { label: 'Start date · Ascending', field: 'start_date', direction: 'asc' },
+        { label: 'Start date · Descending', field: 'start_date', direction: 'desc' },
+        { label: 'End date · Ascending', field: 'end_date', direction: 'asc' },
+        { label: 'End date · Descending', field: 'end_date', direction: 'desc' },
+    ]
+
+    const parseProjectDate = (value?: string) => {
+        if (!value) return 0
+        if (value.toLowerCase() === 'present') {
+            return Number.MAX_SAFE_INTEGER
+        }
+        const [month, year] = value.split('/').map((part) => Number(part))
+        if (!month || !year) return 0
+        return new Date(year, month - 1, 1).getTime()
+    }
+
+    const displayedProjects = computed(() => {
+        const baseList = showWorkingOnly.value ? projects.filter((proj) => proj.currently_working) : projects
+        if (!sortField.value) {
+            return baseList
+        }
+        return [...baseList].sort((a, b) => {
+            const field = sortField.value || 'start_date'
+            const aValue = parseProjectDate(field === 'start_date' ? a.start_date : a.end_date)
+            const bValue = parseProjectDate(field === 'start_date' ? b.start_date : b.end_date)
+            const direction = sortDirection.value === 'asc' ? 1 : -1
+            if (aValue === bValue) return 0
+            return aValue > bValue ? direction : -direction
+        })
+    })
+
+    const displayedProjectsCount = computed(() => displayedProjects.value.length)
+
+    const applySort = (option: SortOption) => {
+        sortField.value = option.field
+        sortDirection.value = option.direction
+        sortMenu.value = false
+    }
+
+    const clearSort = () => {
+        sortField.value = null
+        sortMenu.value = false
+    }
+
     const clearFilter = () => { showWorkingOnly.value = false }
 </script>
 
@@ -15,7 +67,17 @@
 <section id="#projects" class="pt-8 pb-4">
         <v-container>
           <div class="projects-header mb-4">
-            <h2 class="section-title">Latest Projects</h2>
+            <div class="projects-title">
+              <h2 class="section-title">Projects</h2>
+              <v-chip
+                class="projects-count-chip"
+                color="accent"
+                variant="tonal"
+                size="small"
+              >
+                {{ displayedProjectsCount }}
+              </v-chip>
+            </div>
             <div class="projects-filters">
               <v-tooltip
                 text="Current Projects"
@@ -35,7 +97,7 @@
               </v-tooltip>
               <v-chip
                 v-if="showWorkingOnly"
-                size="small"
+                size="large"
                 color="accent"
                 variant="tonal"
                 class="ml-2"
@@ -44,6 +106,71 @@
               >
                 Currently working
               </v-chip>
+              <div class="projects-sorter">
+                <v-menu
+                  v-model="sortMenu"
+                  location="bottom"
+                  :close-on-content-click="false"
+                  offset="8"
+                >
+                  <template #activator="{ props }">
+                    <v-tooltip text="Sort projects" location="bottom" content-class="projects-tooltip">
+                      <template #activator="{ props: tooltipProps }">
+                        <v-btn
+                          v-bind="{ ...props, ...tooltipProps }"
+                          icon="mdi-sort"
+                          variant="tonal"
+                          :color="sortField ? 'accent' : 'brand'"
+                          density="comfortable"
+                        />
+                      </template>
+                    </v-tooltip>
+                  </template>
+                  <v-card class="sort-menu-card" elevation="6">
+                    <v-card-title class="text-subtitle-2 py-2">Sort projects</v-card-title>
+                    <v-divider></v-divider>
+                    <v-list density="compact">
+                      <v-list-item
+                        v-for="option in sortMenuOptions"
+                        :key="option.label"
+                        @click="applySort(option)"
+                        :active="sortField === option.field && sortDirection === option.direction"
+                      >
+                        <v-list-item-title>{{ option.label }}</v-list-item-title>
+                        <template #append>
+                          <v-icon
+                            size="18"
+                            :icon="option.direction === 'asc' ? 'mdi-arrow-up' : 'mdi-arrow-down'"
+                          />
+                        </template>
+                      </v-list-item>
+                    </v-list>
+                    <v-divider v-if="sortField"></v-divider>
+                    <v-card-actions v-if="sortField">
+                      <v-btn variant="text" color="accent" @click="clearSort">Clear sorting</v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-menu>
+                <v-tooltip
+                  v-if="sortField"
+                  text="Clear sorting"
+                  location="bottom"
+                  content-class="projects-tooltip"
+                >
+                  <template #activator="{ props }">
+                    <v-btn
+                      v-bind="props"
+                      icon="mdi-close"
+                      variant="tonal"
+                      color="accent"
+                      density="comfortable"
+                      class="ml-1"
+                      size="small"
+                      @click="clearSort"
+                    />
+                  </template>
+                </v-tooltip>
+              </div>
             </div>
           </div>
           <template v-if="smAndUp">
@@ -214,7 +341,26 @@
     gap: 12px;
 }
 
+.projects-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.projects-count-chip {
+    font-weight: 600;
+    text-transform: none;
+}
+
 .projects-filters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.projects-sorter {
     display: flex;
     align-items: center;
 }
