@@ -3,7 +3,7 @@ export function useProjects(){
         {
             id: "PR-04",
             project_name: "Hanbee3",
-            thumbnail: "/images/projects/hanbee3-logo.png",
+            thumbnail: "/images/projects/og-image.jpg",
             short_description: "Digital call center & telesales solutions for businesses and telesales agents",
             start_date: "10/2025",
             end_date:"Present",

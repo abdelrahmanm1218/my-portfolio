@@ -179,15 +179,17 @@
             <v-col cols="12" md="4" class="d-flex" v-for="proj in displayedProjects" :key="proj.id">
 
                 <v-card class="project-card d-flex flex-column h-100 w-100">
-                    <NuxtImg
-                      :src="proj.thumbnail"
-                      class="project-thumb"
-                      sizes="xs:320px sm:400px md:420px lg:420px"
-                      format="webp"
-                      :quality="80"
-                      densities="x1 x2"
-                      :img-attrs="{ loading: 'lazy', height: '200', width: '420' }"
-                    />
+                    <div class="project-thumb-wrapper">
+                      <NuxtImg
+                        :src="proj.thumbnail"
+                        class="project-thumb"
+                        sizes="xs:320px sm:400px md:420px lg:420px"
+                        format="webp"
+                        :quality="80"
+                        densities="x1 x2"
+                        :img-attrs="{ loading: 'lazy', width: '420', height: '236' }"
+                      />
+                    </div>
                     
                     
                     <v-card-title>{{ proj.project_name }}</v-card-title>
@@ -255,15 +257,17 @@
           >
                 <v-card  elevation="6" class="project-card d-flex flex-column h-100 w-100">
               
-                <NuxtImg
-                  :src="proj.thumbnail"
-                  class="project-thumb"
-                  sizes="xs:320px sm:360px"
-                  format="webp"
-                  :quality="100"
-                  densities="x1 x2"
-                  :img-attrs="{ loading: 'lazy', height: '200', width: '360' }"
-                />
+                <div class="project-thumb-wrapper">
+                  <NuxtImg
+                    :src="proj.thumbnail"
+                    class="project-thumb"
+                    sizes="xs:320px sm:360px"
+                    format="webp"
+                    :quality="100"
+                    densities="x1 x2"
+                    :img-attrs="{ loading: 'lazy', width: '360', height: '203' }"
+                  />
+                </div>
               
               <v-card-title>{{ proj.project_name }}</v-card-title>
               
@@ -326,9 +330,17 @@
     transform: translateY(-2px);
 }
 
+.project-thumb-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 0;
+    background: var(--color-surface-variant);
+}
+
 .project-thumb {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
