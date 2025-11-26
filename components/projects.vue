@@ -228,9 +228,8 @@
 
           <template v-else>
             <v-carousel
-          show-arrows="hover"
-          hide-delimiters
-          height="450"
+              hide-delimiters
+              height="450"
         >
         <template #prev="{ props }">
       <v-btn
