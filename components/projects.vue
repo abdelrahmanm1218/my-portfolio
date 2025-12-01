@@ -1,9 +1,27 @@
 <script lang="ts" setup>
-    import { computed, ref } from 'vue';
+    import { computed, ref, onMounted } from 'vue';
     import { useProjects } from '~/composables/useProjects';
     import { useDisplay } from 'vuetify';
     const projects = useProjects()
-    const {smAndUp} = useDisplay()
+    const display = useDisplay()
+    
+    // Track if component is mounted (client-side)
+    const isMounted = ref(false)
+    
+    onMounted(() => {
+        isMounted.value = true
+    })
+    
+    // Computed property that handles SSR and client-side reactivity
+    // Defaults to true (desktop) for SSR, then uses actual display value on client
+    const mdAndUp = computed(() => {
+        if (!isMounted.value) {
+            // During SSR or before mount, default to desktop (true)
+            return true
+        }
+        // After mount, use the actual display breakpoint
+        return display.mdAndUp.value
+    })
 
     type SortField = 'start_date' | 'end_date'
     type SortDirection = 'asc' | 'desc'
@@ -173,7 +191,7 @@
               </div>
             </div>
           </div>
-          <template v-if="smAndUp">
+          <template v-if="mdAndUp">
             <v-row align="stretch">
             
             <v-col cols="12" md="4" class="d-flex" v-for="proj in displayedProjects" :key="proj.id">
