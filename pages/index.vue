@@ -21,7 +21,7 @@ import Footer from '~/components/Footer.vue';
       <Hero/>
   
       <!-- ABOUT ME -->
-      <MiniAbout/>
+      <MiniAbout id="about"/>
       <!-- <section class="py-16">
         <v-container>
           <h2 class="section-title mb-6">About Me</h2>
@@ -41,7 +41,7 @@ import Footer from '~/components/Footer.vue';
       </section> -->
   
       <!-- SKILLS -->
-       <Skills/>
+       <Skills id="skills"/>
       <!-- <section id="skills" class="bg-light py-16">
         <v-container>
           <h2 class="section-title mb-8">Skills & Tools</h2>
@@ -69,10 +69,10 @@ import Footer from '~/components/Footer.vue';
       </section> -->
   
       <!-- PROJECTS -->
-     <Projects/>
+     <Projects id="projects"/>
   
       <!-- EXPERIENCE TIMELINE -->
-       <Experience/>
+       <Experience id="experience"/>
       <!-- <section class="bg-light py-16">
         <v-container>
           <h2 class="section-title mb-8">Experience</h2>

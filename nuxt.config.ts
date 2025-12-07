@@ -71,6 +71,7 @@ export default defineNuxtConfig({
               // Add your social media profiles here
               'https://www.linkedin.com/in/abdelrahman-mahmoud-63031522a',
               'https://github.com/abdelrahmanm1218',
+              'https://wuzzuf.net/me/Abdelrahman-Mahmoud-3b57bc1f77',
 
             ],
             knowsAbout: ['Vue.js', 'Nuxt.js', 'Angular', 'TypeScript', 'JavaScript', 'Web Development', 'Frontend Development',  'Vuetify', 'Bootstrap', 'Ant-Design', "Git", 'Github', 'Pyhton', 'Frappe', 'ERPNext', 'Django', 'APIs', 'REST API', 'SQL', 'MySQL', 'Backend Development', 'Swagger', 'Apidog'],
