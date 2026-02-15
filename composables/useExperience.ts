@@ -4,9 +4,17 @@ export function useExperience(){
         date: '08/2025 – 02/2026',
           role: 'Full Stack Engineer',
           company: 'Homains',
-          desc: ["Translated business requirements into scalable technical solutions, which enabled 3+ key initiatives and reduced project delivery time by 30%.",
-                 "Partnered with cross-functional stakeholders to translate business needs into technical solutions, delivering 10+ successful product features that aligned with strategic goals.",
-                 "Developed and maintained 25+ automated end-to-end Cypress test cases to validate core user flows and ensure UI reliability.",
+          desc: ["Translated business requirements into scalable solutions, designing APIs and business logic consumed by frontend and mobile applications, delivering 10+ features and reducing delivery time by 30%.",
+
+"Developed and maintained production backend services using Python, Frappe, and ERPNext, repairing and normalizing 5,000+ production records to improve data integrity and overall system reliability.",
+
+"Built responsive web applications using Angular, Vue, Nuxt, and TypeScript, integrating REST APIs with RxJS for reliable async data handling.", 
+
+"Refactored legacy frontend code, resolving 50+ UI issues, improving usability by 80%, and boosting performance by up to 30%.",
+
+"Implemented 25+ Cypress end-to-end tests, reducing regression issues and enhancing UI stability.",
+
+"Collaborated with clients and cross-functional teams in Agile environments to ensure alignment and successful delivery.",,
                 ],
           logo: "/homains-logo.png"
       },  
