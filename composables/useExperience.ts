@@ -3,7 +3,7 @@ export function useExperience(){
       {
           date: '12/2025 – Present',
           role: 'Founder',
-          company: 'Catalyx Solutions',
+          company: 'Catalyx',
           desc: [],
           logo: "/images/projects/Blue White Professional Minimal Brand Logo_20260213_220447_0000.png"
         },
