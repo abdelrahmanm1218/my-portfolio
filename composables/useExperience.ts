@@ -1,7 +1,7 @@
 export function useExperience(){
     const experiences = [
       {
-        date: '08/2025 – Present',
+        date: '08/2025 – 02/2026',
           role: 'Full Stack Engineer',
           company: 'Homains',
           desc: ["Translated business requirements into scalable technical solutions, which enabled 3+ key initiatives and reduced project delivery time by 30%.",
