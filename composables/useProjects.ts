@@ -68,7 +68,7 @@ export function useProjects(){
          {
             id: "PR-06",
             project_name: "Techniyyat",
-            thumbnail: "https://placehold.co/600x400?text=Classified",
+            thumbnail: "https://placehold.co/600x400?text=Techniyyat",
              short_description: "Open source project, that provide community for people to support the right cause",
             description: "Open source project, that provide community for people to support & defend the right cause",
              start_date: "03/2025",
