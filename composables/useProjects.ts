@@ -58,7 +58,7 @@ export function useProjects(){
             id: "PR-05",
             project_name: "Tokens United",
             thumbnail: "",
-            short_description: "Digital call center & telesales solutions for businesses and telesales agents",
+            short_description: "Tokens United company's portfolio",
             start_date: "5/2025",
             end_date:"05/2025",
             technologies: ["HTML", "SCSS", "Python"],
