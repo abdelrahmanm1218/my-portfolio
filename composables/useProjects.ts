@@ -70,7 +70,7 @@ export function useProjects(){
         {
             id: "PR-05",
             project_name: "Tokens United",
-            thumbnail: "",
+            thumbnail: "https://placehold.co/600x400?text=Tokens United",
             short_description: "Tokens United company's portfolio",
             start_date: "5/2025",
             end_date:"05/2025",
