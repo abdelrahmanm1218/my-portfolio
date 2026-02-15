@@ -6,11 +6,11 @@ export function useProjects(){
             thumbnail: "/images/projects/og-image.jpg",
             short_description: "Digital call center & telesales solutions for businesses and telesales agents",
             start_date: "10/2025",
-            end_date:"Present",
+            end_date:"02/2026",
             technologies: ["Frappe", "ERPNext", "Python", "Angular"],
             link: "https://hanbee3.com/home",
             classified: false,
-            currently_working: true,
+            currently_working: false,
         },
         {
             id: "PR-02",
@@ -33,11 +33,11 @@ export function useProjects(){
             short_description: "The Software Engineering Boot camp That Bridges the Gap between Education and Industry",
             // description: "Internhsip program to track interns and internship cycles and guide new interns via user specific dashboards",
             start_date: "12/2024",
-            end_date: "Present",
+            end_date: "02/2026",
             technologies: ["TypeScript","Angular",  "Ant-Design", "Git-Flow", "Frappe", "ERPNext", "Python"],
             link: "https://praxis.homains.eu/",
             classified: false,
-            currently_working: true,
+            currently_working: false,
 
         },
         {
