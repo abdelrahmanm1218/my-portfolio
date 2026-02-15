@@ -206,6 +206,7 @@
                         :quality="80"
                         densities="x1 x2"
                         :img-attrs="{ loading: 'lazy', width: '420', height: '236' }"
+                          :alt="proj.project_name + ' logo'"
                       />
                     </div>
                     
