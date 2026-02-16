@@ -33,6 +33,7 @@
                                             sizes="40px"
                                             :modifiers="{ format: 'webp', quality: 80 }"
                                             :img-attrs="{ loading: 'lazy' }"
+                                            :alt="skill.name +' logo'"
                                         />
                                         <span class="img-tooltip">{{ skill.name }}</span>
                                     </div>
