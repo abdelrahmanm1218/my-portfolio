@@ -31,6 +31,7 @@
                 :quality="80"
                 densities="x1"
                 :img-attrs="{ loading: 'lazy', width: '48', height: '48' }"
+                  :alt="exp.company +' logo'"
               />
             </v-avatar>
         </template>
