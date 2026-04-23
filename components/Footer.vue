@@ -3,10 +3,10 @@ import { useSocials } from '~/composables/useSocials';
 
 const socials = useSocials();
 const sections = [
-    { title: 'About', to: '/about' },
-    { title: 'Projects', to: '/projects' },
-    { title: 'Skills', to: '/skills' },
-    { title: 'Experience', to: '/experience' },
+    { title: 'Home', href: '#hero' },
+    { title: 'About', href: '#about' },
+    { title: 'Projects', href: '#projects' },
+    { title: 'Experience', href: '#experience' },
 ]
 </script>
 
@@ -21,7 +21,7 @@ const sections = [
                 </v-col>
 
                 <v-col cols="12" md="6" class="text-center">
-                    <v-btn color="accent" variant="text" density="comfortable" v-for="section in sections" :key="section.title" :to="section.to" text class="mx-2 mx-sm-0 mx-md-0">
+                    <v-btn color="accent" variant="text" density="comfortable" v-for="section in sections" :key="section.title" :href="section.href" class="mx-2 mx-sm-0 mx-md-0">
                         {{ section.title }}
                     </v-btn>
                 </v-col>
