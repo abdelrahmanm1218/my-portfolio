@@ -4,7 +4,7 @@
 
 
 <template>
-    <section class="pt-8 pb-4">
+    <section class="pb-4">
             <v-container>
             <h2 class="section-title mb-4">About</h2>
             <p class="mb-3">
@@ -19,8 +19,9 @@
                 web technologies. With a strong foundation in Computer Science, I focus on
                 writing clean, maintainable code.
             </p>
+<!-- 
             <div class="d-flex flex-wrap">
-                <!-- FRONTEND -->
+                
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>JavaScript</v-chip>
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>TypeScript</v-chip>
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Vue.js</v-chip>
@@ -31,7 +32,7 @@
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Bootstrap</v-chip>
 
 
-                <!-- BACKEND -->
+
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Python</v-chip>
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Frappe</v-chip>
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>ERPNext</v-chip>
@@ -41,12 +42,13 @@
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Postman</v-chip>
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>MySQL</v-chip>
 
-                <!-- GENERAL -->
+                
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Git</v-chip>
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Git Workflows</v-chip>
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>Agile</v-chip>
                 <v-chip color="brand" variant="tonal" size="x-small" class="ma-1 text-caption" label>SEO</v-chip>
             </div>
+             -->
             </v-container>
         </section>
 </template>
