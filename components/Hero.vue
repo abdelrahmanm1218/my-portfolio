@@ -15,17 +15,13 @@ onMounted(()=>{
 
 <template>
 
-    <section class="hero-section mt-12 d-flex flex-column align-center justify-center">
+    <section class="hero-section mt-12 d-flex flex-column align-center justify-center" :style="{backgroundColor: 'var(--color-background)',color: 'var(--color-text)',minHeight: '90vh' }">
         
         <v-container>
 
             <v-row align="center" >
-                <v-col cols="12" md="5" order="1" order-md="1" class="text-center">
-                        <v-img fetchpriority="high" src="/images/profile-hero.jpg" aspect-ratio="1" alt="Abdelrahman Mahmoud Portrait" :width="imgSize" class="avatar-img mx-auto rounded-circle elevation-4" cover></v-img>
-
-                </v-col>
-
-                <v-col cols="12" md="7" order="2" order-md="2" class="fade-slide text-center" style="animation-delay: 0.2s;" >
+            
+                <v-col cols="12" md="7" order="2" order-sm="1" order-md="1" class="fade-slide text-center" style="animation-delay: 0.2s;" >
                     <h1 class="text-h5 text-md-h3 text-lg-h2 font-weight-bold mb-2" style="color: var(--color-brand);">Abdelrahman Mahmoud</h1>
                     
                     <h2 class="text-h6 text-md-h5 text-lg-h4 te mb-4">Full Stack Developer</h2>
@@ -50,6 +46,12 @@ onMounted(()=>{
                        
                         
                     </div>
+
+                </v-col>
+
+
+                 <v-col cols="12" md="5" order="1" order-sm="2" order-md="2" class="text-center">
+                        <v-img fetchpriority="high" src="/images/profile-hero.jpg" aspect-ratio="1" alt="Abdelrahman Mahmoud Portrait" :width="imgSize" class="avatar-img mx-auto rounded-circle elevation-4" cover></v-img>
 
                 </v-col>
             </v-row>
