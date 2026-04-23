@@ -16,28 +16,35 @@ const links = [
 
 const drawer = ref(false)
 const activeLink = ref('#hero')
-const observer = ref<IntersectionObserver | null>(null)
+
+const handleScroll = () => {
+  const sections = ['hero', 'about', 'projects', 'experience']
+  const scrollY = window.scrollY + window.innerHeight / 2 // middle of viewport
+  let closest = ''
+  let minDistance = Infinity
+  sections.forEach(id => {
+    const el = document.getElementById(id)
+    if (el) {
+      const rect = el.getBoundingClientRect()
+      const sectionMiddle = rect.top + rect.height / 2
+      const distance = Math.abs(sectionMiddle - window.innerHeight / 2)
+      if (distance < minDistance) {
+        minDistance = distance
+        closest = id
+      }
+    }
+  })
+  if (closest) activeLink.value = '#' + closest
+}
 
 onMounted(()=> {
   socials.value = useSocials()
-
-  const sections = ['hero', 'about',  'projects', 'experience']
-  observer.value = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        activeLink.value = '#' + entry.target.id
-      }
-    })
-  }, { threshold: 0.5 })
-
-  sections.forEach(id => {
-    const el = document.getElementById(id)
-    if (el) observer.value?.observe(el)
-  })
+  window.addEventListener('scroll', handleScroll)
+  handleScroll() // initial check
 })
 
 onBeforeUnmount(() => {
-  observer.value?.disconnect()
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
