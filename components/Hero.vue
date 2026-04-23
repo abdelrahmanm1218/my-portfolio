@@ -62,12 +62,6 @@ onMounted(()=>{
 </template>
 
 <style scoped>
-    .hero-section {
-    background-color: var(--color-background);
-    color: var(--color-text);
-    min-height: 90vh; 
-  }
-
   .fade-slide {
     opacity: 0;
     transform: translateY(30px);
