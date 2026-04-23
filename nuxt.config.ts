@@ -11,6 +11,9 @@ export default defineNuxtConfig({
   plugins: [
     '~/plugins/vuetify.ts',
   ],
+  build: {
+    transpile: ['vuetify'],
+  },
   vite: {
     define: {
       'process.env.DEBUG': false,
