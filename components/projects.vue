@@ -396,12 +396,20 @@
     justify-content: center;
 }
 
+
 .project-thumb {
     width: 90%;
-    height: 50%;
+    height: 60%;
     object-fit: cover;
     display: block;
     border-radius: 12px;
+
+}
+@media (max-width:767px){
+  .project-thumb {
+    height:70%;
+    aspect-ratio: 16/9;
+  }
 }
 
 .projects-header {
