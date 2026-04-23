@@ -1,13 +1,14 @@
 
 export default function useSkills(){
     const frontend = [
-        {name: 'HTML', icon: '/icons/html.svg'},
-        {name: 'CSS', icon: '/icons/css.svg'},
-        {name: 'JavaScript', icon: '/icons/javascript.svg'},
-        {name: 'TypeScript', icon: '/icons/typescript.svg'},
+        {name: 'React', icon: '/icons/react.svg'},
         {name: 'Angular', icon: '/icons/angular.svg'},
         {name: 'Vue.js', icon: '/icons/vue-js.svg'},
         {name: 'Nuxt.js', icon: '/icons/nuxt-js.svg'},
+        {name: 'TypeScript', icon: '/icons/typescript.svg'},
+        {name: 'JavaScript', icon: '/icons/javascript.svg'},
+        {name: 'HTML', icon: '/icons/html.svg'},
+        {name: 'CSS', icon: '/icons/css.svg'},
         {name: 'Vuetify', icon: '/icons/vuetify.svg'},
         {name: 'Bootstrap', icon: '/icons/bootstrap.svg'},
         {name: 'Ant-Design', icon: '/icons/ant-design.svg'},
